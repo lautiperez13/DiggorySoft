@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidora de Bebidas - Pedidos</title>
+    <link rel="stylesheet" href="estilos/pedidos.css">
+    <script src="source/pedidos.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="modulos.html">
+                <img src="estilos/imagenes/logo_grande-removebg-preview.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="modulos.html">Menú</a></li>
+                <li><a href="ayuda.html">Acerca de</a></li>
+                <li><a href="login.html" style="color: rgb(80, 14, 14);">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <br>
+        <h2>Pedidos
+            <hr>
+        </h2>
+        <button id="add-order-btn">Añadir Pedido</button>
+        <!-- Calendario "Pedidos del día" -->
+        <br><br>
+        <label for="pedidos-del-dia">Ver pedidos del día:</label>
+        <input type="date" id="pedidos-del-dia" name="pedidos-del-dia">
+
+        <!-- Formulario para añadir pedido -->
+        <div id="order-form" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Añadir Nuevo Pedido</h2>
+                <form id="new-order-form">
+                    <label for="cliente">Cliente:</label>
+                    <select id="cliente" name="cliente" required>
+                        <!-- Estos valores deberían llenarse dinámicamente desde la base de datos -->
+                    </select>
+
+                    <!-- Campos autocompletados -->
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" readonly required>
+                    
+                    <label for="barrio">Barrio:</label>
+                    <input type="text" id="barrio" name="barrio" readonly required>
+
+                    <label for="diaEntrega">Día de Entrega:</label>
+                    <input type="text" id="diaEntrega" readonly> <!-- Campo para el día de entrega -->
+
+    
+ 
+
+
+
+                    <button type="submit">Añadir Pedido</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Dirección</th>
+                        <th>Barrio</th>
+                        <th>Dia entrega</th>
+                        <th>Monto</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="order-list">
+                    <!-- Aquí se añadirán los pedidos dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
+
